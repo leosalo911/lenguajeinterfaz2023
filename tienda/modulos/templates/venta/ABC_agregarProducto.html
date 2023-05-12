@@ -1,0 +1,41 @@
+{% extends "venta/ABC_ventas.html"%}
+
+{% block cuerpo %}
+    <form class="we-container w3-card-4 w3-light-blue" method="POST">
+        <div class="w3-row-padding">
+
+            <div class="w3-third">
+                <label for="producto">Producto:</label>
+                <select name="producto" id="producto" class="w3-select w3-border">
+                    <option disabled selected>Selecciona el producto deseado</option>
+                    {% for e in cdx.productos %}
+                        <option value={{ e.nombre }}>{{ e.nombre }} ${{ e.precio }}</option>
+                    {% endfor %}
+                   <!-- value="{ cdx.nombre }}" -->
+                </select>
+{#                <a href="{{ url_for('venta.agregar') }}"> Agregar</a>#}
+            </div>
+
+            <div class="w3-third">
+                <h7 for="cantidad">Cantidad:</h7>
+                <div>
+                    <input type="number" id="cantidad" name="cantidad" min="1" max="20" placeholder="0">
+                </div>
+            </div>
+
+            <div class="w3-third w3-section">
+                <div>
+                <a href="/venta/nuevo" class="w3-button w3-red">Cancelar</a>
+                </div>
+            </div>
+
+            <div class="w3-third">
+                <div>
+                    <button class="w3-button w3-section w3-blue w3-ripple w3-padding">Agregar producto</button>
+{#                      <a href="{{ url_for('venta.agregar') }}"> Agregar</a>#}
+                </div>
+            </div>
+            <br>
+        </div>
+    </form>
+{% endblock %}

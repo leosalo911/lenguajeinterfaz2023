@@ -1,0 +1,51 @@
+MENÚ
+    Imágen de fondo
+
+!!VENTA!!
+    No funciona aún el total (tomar el precio del producto, multiplicarlo por la cantidad y sumarselo al total de la venta)
+    Falta la opción de agregar más productos (otros productos a la misma venta)
+	"Ver dirección" aún no está programado
+
+
+
+	Como no funciona el total, está como default el valor 10 en el alta y cambio de ventas.
+
+
+PUESTOS
+        Borrar...
+
+EMPLEADOS
+        Borrar...
+
+
+Borrar EMPLEADO / PUESTO
+	Lanza error intentar borrar un empleado cuando ya tiene un puesto.
+	Lanza error intentar borrar un puesto. (Se tiene que borrar desde workbench)
+
+LOGIN
+    Mensaje de error en modal
+
+
+
+
+
+SOLUCIÓN A ERROR
+	Error de conexión con la bd al correr el proyecto:
+		Caso 1: A veces solo se ocupa abrir workbench e iniciar sesión.
+
+		Caso 2: Al abrir workbench e iniciar sesión, si dice en letras rojas
+			que no hay conexión hacer lo siguiente:
+				-Abrir "Servicios" de la barra de windows.
+				-Buscar MySQL80 e iniciarlo manualmente.
+				-Volver a iniciar la sesión de workbench.
+
+
+    WinError 10061:
+    Si al intentar correr el proyecto sale el siguiente error:
+	sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión)")
+
+    Y al entrar a workbench dice que no hay conexión establecida (consultar screenshot dentro del proyecto de pycharm "WinError 10061.png")
+
+    1. Hay que abrir la ventana de "Servicios" de windows, buscar el que se llama MySQL80 e iniciarlo con click derecho (consultar screenshot "Solución WinError 10061.png").
+    2. Iniciar sesión como root en mysql.
+    3. Correr el proyecto de pycharm.
